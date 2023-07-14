@@ -1,3 +1,4 @@
+//fetched from database
 const DUMMY_EVENTS = [
 	{
 		id: "e1",
