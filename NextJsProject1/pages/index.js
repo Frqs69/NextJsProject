@@ -1,12 +1,18 @@
 import Link from "next/link";
-import { getFeaturedEvents } from "@/data";
+// import { getFeaturedEvents } from "@/data";
 import EventList from "@/components/events/eventList";
+import { getFeaturedEvents } from "@/helpers/api-utils";
 
-export default function Home() {
-	const featuredEvents = getFeaturedEvents();
+export default function Home(props) {
 	return (
 		<>
-			<EventList items={featuredEvents} />
+			<EventList items={props.events} />
 		</>
 	);
 }
+
+export const getStaticProps = async () => {
+	const featuredEvents = await getFeaturedEvents();
+
+	return { props: { events: featuredEvents }, revalidate: 1800 };
+};
