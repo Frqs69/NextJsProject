@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Head from "next/head";
 // import { getFeaturedEvents } from "@/data";
 import EventList from "@/components/events/eventList";
 import { getFeaturedEvents } from "@/helpers/api-utils";
@@ -6,6 +6,9 @@ import { getFeaturedEvents } from "@/helpers/api-utils";
 export default function Home(props) {
 	return (
 		<>
+			<Head>
+				<title>NextEvents</title>
+			</Head>
 			<EventList items={props.events} />
 		</>
 	);

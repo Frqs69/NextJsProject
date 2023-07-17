@@ -5,6 +5,7 @@ import EventContent from "@/components/event-detail/event-content";
 // import { useRouter } from "next/router";
 import { getEventById, getFeaturedEvents } from "@/helpers/api-utils";
 import ErrorAlert from "@/components/ui/error-alert";
+import Head from "next/head";
 
 export default function EventDetailPage(props) {
 	const event = props.event;
@@ -15,6 +16,9 @@ export default function EventDetailPage(props) {
 
 	return (
 		<>
+			<Head>
+				<title>{event.title}</title>
+			</Head>
 			<EventSummary title={event.title} />
 			<EventLogistics
 				date={event.date}

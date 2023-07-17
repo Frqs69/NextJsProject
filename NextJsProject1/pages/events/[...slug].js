@@ -1,20 +1,25 @@
-import Link from "next/link";
-// import { getFilteredEvents } from "@/data";
-import { useRouter } from "next/router";
 import EventList from "@/components/events/eventList";
 import ResultsTitle from "@/components/events/results-title";
 import Button from "@/components/ui/button";
 import ErrorAlert from "@/components/ui/error-alert";
 import { getFilteredEvents } from "@/helpers/api-utils";
+import Head from "next/head";
 
 export default function FilteredEventPage(props) {
 	// if (!filteredEvents) {
 	// 	return <p className='m-auto text-center text-black'>Loading...</p>;
 	// }
 
+	const pageHeadData = (
+		<Head>
+			<title>Filtered Events</title>
+		</Head>
+	);
+
 	if (props.hasError) {
 		return (
 			<>
+				{pageHeadData}
 				<ErrorAlert>
 					<p>Invalid filter. Please adjust your values!</p>
 				</ErrorAlert>
@@ -32,6 +37,7 @@ export default function FilteredEventPage(props) {
 	if (!filteredEvents || filteredEvents.length === 0) {
 		return (
 			<>
+				{pageHeadData}
 				<ErrorAlert>
 					<p>No events found for the chosen filter</p>
 				</ErrorAlert>
@@ -48,6 +54,7 @@ export default function FilteredEventPage(props) {
 
 	return (
 		<>
+			{pageHeadData}
 			<ResultsTitle date={date} />
 			<EventList items={filteredEvents} />
 		</>

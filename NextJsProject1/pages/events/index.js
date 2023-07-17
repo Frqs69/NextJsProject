@@ -2,6 +2,7 @@
 import { getAllEvents } from "@/helpers/api-utils";
 import { useRouter } from "next/router";
 import EventList from "@/components/events/eventList";
+import Head from "next/head";
 
 import EventSearch from "@/components/events/eventSearch";
 
@@ -17,6 +18,9 @@ export default function AllEvents(props) {
 
 	return (
 		<>
+			<Head>
+				<title>All Events</title>
+			</Head>
 			<EventSearch onSearch={findEventsHandler} />
 			<EventList items={allEvents} />;
 		</>

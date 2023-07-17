@@ -3,6 +3,7 @@ import ArrowRightIcon from "../icons/arrow-right-icon";
 import DateIcon from "../icons/date-icon";
 
 import Button from "../ui/button";
+import Image from "next/image";
 
 export default function EventItem({ id, title, image, date, location }) {
 	const humanReadableData = new Date(date).toLocaleDateString("en-US", {
@@ -19,7 +20,9 @@ export default function EventItem({ id, title, image, date, location }) {
 		<li
 			key={id}
 			className='rounded-lg overflow-hidden bg-white m-4 flex flex-col gap-4 shadow-lg md:flex-row'>
-			<img
+			<Image
+				width={1000}
+				height={1000}
 				src={"/" + image}
 				alt='event image'
 				className='w-full object-cover h-40 md:w-2/5 md:h-56'
