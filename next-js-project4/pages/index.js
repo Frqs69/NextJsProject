@@ -1,3 +1,11 @@
+import Hero from "@/components/home-Page/hero";
+import FeaturedPosts from "@/components/home-Page/featured-posts";
+
 export default function Home() {
-	return <h1>New Project</h1>;
+	return (
+		<>
+			<Hero />
+			<FeaturedPosts />
+		</>
+	);
 }
