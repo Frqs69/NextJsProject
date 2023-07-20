@@ -12,15 +12,22 @@ export default function PostItem({ post }) {
 	});
 
 	const imagePath = `/images/posts/${slug}/${image}`;
+	const linkPath = `/posts/${slug}`;
 
 	return (
 		<li className={classes.post}>
-			<Link href='/'>
+			<Link href={linkPath}>
 				<div className={classes.image}>
-					<Image src={imagePath} width={300} height={200} alt={title} />
+					<Image
+						src={imagePath}
+						width={300}
+						height={200}
+						alt={title}
+						layout='responsive'
+					/>
 				</div>
 				<div className={classes.content}>
-					<h3>{title}</h3>
+					<h3 className='font-bold'>{title}</h3>
 					<time>{formattedDate}</time>
 					<p>{excerpt}</p>
 				</div>
