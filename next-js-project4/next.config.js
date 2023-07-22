@@ -4,12 +4,12 @@ const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 const nextConfig = {
 	reactStrictMode: true,
 
-	env: {
-		mongoDb_user: "",
-		mongoDb_password: "",
-		mongoDb_clusterName: "",
-		mongoDb_database: "",
-	},
+	// env: {
+	// 	mongoDb_user: "",
+	// 	mongoDb_password: "",
+	// 	mongoDb_clusterName: "",
+	// 	mongoDb_database: "",
+	// },
 };
 
 module.exports = (phase) => {
