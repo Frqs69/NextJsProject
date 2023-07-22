@@ -4,10 +4,10 @@ const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 const nextConfig = {
 	reactStrictMode: true,
 	env: {
-		mongoDb_user: "kbazyluk123",
-		mongoDb_password: "74pKHpWFWtcJUlEm",
-		mongoDb_clusterName: "cluster0",
-		mongoDb_database: "my-site",
+		mongoDb_user: "",
+		mongoDb_password: "",
+		mongoDb_clusterName: "",
+		mongoDb_database: "",
 	},
 };
 
